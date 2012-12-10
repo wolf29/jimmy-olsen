@@ -27,7 +27,7 @@ SERVICE1='open-ils'
 SERVICE2='cstore'
 SERVICE3='clark' 
 
-if ps ax | grep -v grep | grep -1 $SERVICE0 > /dev/null
+if ps ax | grep -v grep | grep -i $SERVICE0 > /dev/null
 then
     echo "$SERVICE0 service running, everything is fine"
 
@@ -47,7 +47,7 @@ else
     /openils/bin/osrf_ctl.sh -l -a start_perl 
 fi
 
-if ps ax | grep -v grep | grep -1 $SERVICE2 > /dev/null
+if ps ax | grep -v grep | grep -i $SERVICE2 > /dev/null
 then
     echo "$SERVICE2 service running, everything is fine"
 
