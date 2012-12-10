@@ -30,7 +30,7 @@ SERVICE3='clark'
 if ps ax | grep -v grep | grep $SERVICE0 > /dev/null
 then
     echo "$SERVICE0 service running, everything is fine"
-    #continue
+
 else
     echo "$SERVICE0 is not running"
     echo "$SERVICE0 is not running!" | mail -s "$SERVICE0 down" root
@@ -40,7 +40,7 @@ fi
 if ps ax | grep -v grep | grep $SERVICE1 > /dev/null
 then
     echo "$SERVICE1 service running, everything is fine"
-    #continue
+
 else
     echo "$SERVICE1 is not running"
     echo "$SERVICE1 is not running!" | mail -s "$SERVICE1 down" root
@@ -50,9 +50,9 @@ fi
 if ps ax | grep -v grep | grep $SERVICE2 > /dev/null
 then
     echo "$SERVICE2 service running, everything is fine"
-    #continue
+
 else
-    #echo "$SERVICE2 is not running"
+    echo "$SERVICE2 is not running"
     echo "$SERVICE2 is not running!" | mail -s "$SERVICE2 down" root
     /openils/bin/osrf_ctl.sh -l -a start_c 
 fi
@@ -60,9 +60,9 @@ fi
 if ps ax | grep -v grep | grep $SERVICE3 > /dev/null
 then
     echo "$SERVICE3 service running, everything is fine"
-    #continue
+    
 else
-    #echo "$SERVICE3 is not running"
+    echo "$SERVICE3 is not running"
     echo "$SERVICE3 is not running!" | mail -s "$SERVICE3 down" root
     rm /tmp/reporter-LOCK
     /openils/bin/clark-kent.pl -d -c 2 
