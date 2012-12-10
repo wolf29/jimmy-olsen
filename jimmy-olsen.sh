@@ -35,6 +35,7 @@ else
     #echo "$SERVICE0 is not running"
     echo "$SERVICE0 is not running!" | mail -s "$SERVICE0 down" root
     /openils/bin/osrf_ctl.sh -l -a start_router 
+fi
 
 if ps ax | grep -v grep | grep $SERVICE1 > /dev/null
 then
@@ -44,6 +45,7 @@ else
     #echo "$SERVICE1 is not running"
     echo "$SERVICE1 is not running!" | mail -s "$SERVICE1 down" root
     /openils/bin/osrf_ctl.sh -l -a start_perl 
+fi
 
 if ps ax | grep -v grep | grep $SERVICE2 > /dev/null
 then
@@ -53,6 +55,7 @@ else
     #echo "$SERVICE2 is not running"
     echo "$SERVICE2 is not running!" | mail -s "$SERVICE2 down" root
     /openils/bin/osrf_ctl.sh -l -a start_c 
+fi
 
 if ps ax | grep -v grep | grep $SERVICE3 > /dev/null
 then
