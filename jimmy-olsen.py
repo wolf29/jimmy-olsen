@@ -27,15 +27,15 @@ def main():
 #
 def sysuser():
         if os.system('/bin/ps aux | grep -i router | wc -l' < 2):
-			 os.system('/openils/bin/osrf_ctl.sh -a restart_router')
-		if os.system('/bin/ps aux | grep -i open-ils | wc -l' < 2):
-			os.system('/openils/bin/osrf_ctl.sh -a restart_perl')
+		 os.system('/openils/bin/osrf_ctl.sh -a restart_router')
+	if os.system('/bin/ps aux | grep -i open-ils | wc -l' < 2):
+		os.system('/openils/bin/osrf_ctl.sh -a restart_perl')
         if os.system('/bin/ps aux | grep -i cstore | wc -l' < 2):
-			os.system('/openils/bin/osrf_ctl.sh -a restart_c')
+		os.system('/openils/bin/osrf_ctl.sh -a restart_c')
 			
-		if os.system('ps aux | grep -i clark | wc -l' < 2):
-			os.system('rm /tmp/reporterLOCK*')
-			os.system('/openils/bin/clark_kent -d -c 6')
+	if os.system('ps aux | grep -i clark | wc -l' < 2):
+		os.system('rm /tmp/reporterLOCK*')
+		os.system('/openils/bin/clark_kent -d -c 6')
 
 
 main()
