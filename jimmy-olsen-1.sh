@@ -22,14 +22,46 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
+#	-- NOTE:
+#	This script is not ready for production.  It brings up the 
+#	OpenSRF services too quickly, faster than they actually come up,
+#	even in the best case, and this causes jimmy-olsen-1 to attempt 
+#	to bring them up out of order.
+
 SERVICE0='router'
 SERVICE1='open-ils'
 SERVICE2='cstore'
 SERVICE3='clark' 
 
-# 	Reduced functionality from jimmy-olsen-1, which also monitors
-#	openSRF functions.  You cannot bring up the services as quickly as
-#	jimmy-olsen-1.sh wants them to go.
+if ps ax | grep -v grep | grep -i $SERVICE0 > /dev/null
+then
+    echo "$SERVICE0 service running, everything is fine"
+
+else
+    echo "$SERVICE0 is not running"
+    echo "$SERVICE0 is not running!" | mail -s "$SERVICE0 down" root
+    /openils/bin/osrf_ctl.sh -l -a start_router 
+fi
+
+if ps ax | grep -v grep | grep -i $SERVICE1 > /dev/null
+then
+    echo "$SERVICE1 service running, everything is fine"
+
+else
+    echo "$SERVICE1 is not running"
+    echo "$SERVICE1 is not running!" | mail -s "$SERVICE1 down" root
+    /openils/bin/osrf_ctl.sh -l -a start_perl 
+fi
+
+if ps ax | grep -v grep | grep -i $SERVICE2 > /dev/null
+then
+    echo "$SERVICE2 service running, everything is fine"
+
+else
+    echo "$SERVICE2 is not running"
+    echo "$SERVICE2 is not running!" | mail -s "$SERVICE2 down" root
+    /openils/bin/osrf_ctl.sh -l -a start_c 
+fi
 
 if ps ax | grep -v grep | grep -i $SERVICE3 > /dev/null
 then

@@ -9,4 +9,9 @@ By default clark-kent.pl is started as daemon with 6 child processes.
 There needs to be a cron job set for jimmy-olsen - The line below makes jimmy-olsen check every 5 minutes
 5 * * * * /openils/bin/jimmy-olsen.sh
 
+===========================
+Jimmy-olsen.sh brings up only clark-kent.pl
+
+Jimmy-olsen-1.sh has the ability to bring up all the OSRF services, but is too fast.  He needs a crosscheck or a rest period between to allow the services time to initiate themselves fully.
+
 
