@@ -31,7 +31,7 @@ SERVICE3='Clark Kent'
 #	openSRF functions.  You cannot bring up the services as quickly as
 #	jimmy-olsen-1.sh wants them to go.
 
-if ps ax | grep -v grep | grep -i $SERVICE3 > /dev/null
+if ps ax | grep -v grep | grep -i $"{SERVICE3}" > /dev/null
 then
     echo "$SERVICE3 service running, everything is fine"
     
