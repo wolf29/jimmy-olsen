@@ -25,7 +25,7 @@
 SERVICE0='router'
 SERVICE1='open-ils'
 SERVICE2='cstore'
-SERVICE3='Clark Kent' 
+SERVICE3='Clark' 
 
 # 	Reduced functionality from jimmy-olsen-1, which also monitors
 #	openSRF functions.  You cannot bring up the services as quickly as
