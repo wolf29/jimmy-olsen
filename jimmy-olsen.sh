@@ -1,5 +1,5 @@
-#!/bin/bash -x
-# 
+#!/bin/bash 
+# -x
 #  -*- coding: utf-8 -*-
 #
 #       jimmy_olsen.sh
