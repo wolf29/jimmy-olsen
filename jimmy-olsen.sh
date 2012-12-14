@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # 
 #  -*- coding: utf-8 -*-
 #
@@ -22,16 +22,13 @@
 #       Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #       MA 02110-1301, USA.
 
-SERVICE0='router'
-SERVICE1='open-ils'
-SERVICE2='cstore'
-SERVICE3='Clark' 
+SERVICE3='clark' 
 
 # 	Reduced functionality from jimmy-olsen-1, which also monitors
 #	openSRF functions.  You cannot bring up the services as quickly as
 #	jimmy-olsen-1.sh wants them to go.
 
-if ps ax | grep -v grep | grep -i $"{SERVICE3}" > /dev/null
+if  ps aux | grep -v grep | grep -i "${SERVICE3}" #> /dev/null 
 then
     echo "$SERVICE3 service running, everything is fine"
     
