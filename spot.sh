@@ -1,4 +1,5 @@
 #!/bin/sh
+<<<<<<< HEAD
 
 #
 #  spot.sh
@@ -29,6 +30,8 @@
 #  MA 02110-1301, USA.
 #  
 #  
+=======
+>>>>>>> 9e78d203fad22877dd0cf3259188032a80424f05
 SERVICE='apache2'
 echo "enter the service you want to check"
 read SERVICE
@@ -38,5 +41,9 @@ then
 else
     echo "$SERVICE is not running"
     echo "$SERVICE is not running. Starting $SERVICE" | mail -s "$SERVICE down" root
+<<<<<<< HEAD
   	
+=======
+  	gedit &
+>>>>>>> 9e78d203fad22877dd0cf3259188032a80424f05
 fi
